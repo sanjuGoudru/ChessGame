@@ -1,6 +1,8 @@
 package main;
 
-public class ChessPiece {
+import java.util.ArrayList;
+
+public abstract class ChessPiece {
 	private boolean avialable;
 	private Position position;
 	
@@ -21,6 +23,7 @@ public class ChessPiece {
 	public void setPosition(Position position) {
 		this.position = position;
 	}
+	public abstract ArrayList<Position> getValidPositions();
 	public boolean isValid(ChessBoard board, Position beforePos, Position afterPos){
 		int beforeX = beforePos.getX();
 		int beforeY = beforePos.getY();
