@@ -10,4 +10,14 @@ public class Place {
 	public Place(Position position) {
 		this(position,null);
 	}
+	public void takePlace(ChessPiece cp) {
+		if(piece!=null)
+			piece.setAvailability(false);
+		piece = cp;
+	}
+	public ChessPiece removePlace() {
+		ChessPiece cp = piece;
+		piece = null;
+		return cp;
+	}
 }
